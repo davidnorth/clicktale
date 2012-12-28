@@ -15,7 +15,7 @@ module Astrails
     begin
       conffile = File.join(Rails.root, "config", "clicktale.yml")
       conf = YAML.load(File.read(conffile))
-      CONFIG.merge!(conf[RAILS_ENV])
+      CONFIG.merge!(conf[Rails.env])
     rescue
       puts "*" * 50
       puts "#{conffile} can not be loaded:"
